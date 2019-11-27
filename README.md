@@ -1,4 +1,4 @@
-MVP - Minimum Viable Product
+Canvasing Project 2
 
 1. technologies used
     1. Mongo
