@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const MONGODB_URI = process.env.MONGODB_URI||'mongodb://localhost:27017/canvasing'
 const methodOverride = require('method-override');
 const voterController = require('./controllers/voters.js');
+const Port = process.env.PORT || 3002;
 
 
 
@@ -22,6 +23,6 @@ mongoose.connection.once('open', ()=> {
 // where routes would have been
 app.use('/canvasing', voterController); 
 
-app.listen(3002, () => {
+app.listen(Port, () => {
     console.log('this is working');
 });
