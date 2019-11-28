@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const MONGODB_URI = process.env.MONGODB_URI||'mongodb://localhost:27017/canvasing'
 const methodOverride = require('method-override');
 const voterController = require('./controllers/voters.js');
 
@@ -13,7 +14,7 @@ app.engine('jsx', require('express-react-views').createEngine());
 
 
 //////////////////////////////////////////////////
-mongoose.connect('mongodb://localhost:27017/canvasing', { useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.connection.once('open', ()=> {
     console.log('connected to mongo');
 });
